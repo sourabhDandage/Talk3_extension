@@ -45,13 +45,13 @@ api = tweepy.API(auth)
 # twitter_stream.filter(track=['#tinnitus'])
 
 
-import json
-from pprint import pprint
-
-with open(data_dir + '/python.json') as data_file:
-    data = json.load(data_file)
-
-pprint(data["text"])
+# import json
+# from pprint import pprint
+#
+# with open(data_dir + '/python.json') as data_file:
+#     data = json.load(data_file)
+#
+# pprint(data["text"])
 
 # Open/Create a file to append data
 csvFile = open(data_dir +'/tweets.csv', 'a')
@@ -59,6 +59,6 @@ csvFile = open(data_dir +'/tweets.csv', 'a')
 csvWriter = csv.writer(csvFile)
 
 
-for tweet in tweepy.Cursor(api.search,q="#tinnitus",count=100,lang="en",since_id='2014-06-12').items():
+for tweet in tweepy.Cursor(api.search,q="#tinnitus",count=100,lang="en",since_id='2017-04-30').items():
                             print(tweet.created_at, tweet.text)
                             csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
