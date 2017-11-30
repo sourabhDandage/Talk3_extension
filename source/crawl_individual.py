@@ -4,22 +4,21 @@ import json
 from collections import Counter
 import sys
 
-
-
-#twitter app details
-
+import config
 
 #------------------
 #basic code to get latest tweets, issue of response 420
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_secret)
+auth = OAuthHandler(config.consumer_key, config.consumer_secret)
+auth.set_access_token(config.access_token, config.access_secret)
 
 api = tweepy.API(auth)
 
 counter = Counter()
 
 with open("data/treatment_definitons.txt", "r") as fh:
-    for line in fh:
+    lines = fh.readlines()
+    lines += ["medicine", "treatment", "cure", "drug"]
+    for line in lines:
         treatments = line.strip().split(",")
         name = treatments[0]
         print("==== {} ===".format(name))
