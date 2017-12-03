@@ -4,15 +4,19 @@ import config
 import logging
 import json
 
+out = "/home/ubuntu/Talk3_extension/data/tweets.jsonl"
+
 
 class TinnitusStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
         logging.warn("Stored message " + str(status.id))
-        print(json.dumps(status._json))
+        with open(out, "a") as fh:
+            json.dump(status._json, fh)
+            fh.write('\n')
 
     def on_error(self, status_code):
-        logging.warn(status_code)
+        logging.warn("Error: " + str(status_code))
 
         if status_code == 420:
             # returning False in on_data disconnects the stream
