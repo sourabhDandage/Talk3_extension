@@ -1,3 +1,4 @@
+medicine, treatment, cure, drug
 Acamprosate, Campral
 Acoustic CR Neuromodulation, Acoustic Coordinated Reset Neuromodulation,  neuromodulation, neuromodulator, ANM, ACRN, ACM
 Acupuncture
@@ -37,7 +38,7 @@ Pregabalin, Lyrica
 Retigabine, Trobalt, Potiga
 Saffron
 Salustim, TVNS
-Soundcure, Serenade, Universal Sound Therapy
+Sound Therapy, Soundcure, Serenade, Universal Sound Therapy
 Steroids, Prednisone, Prednisolone, Prednazone, Medrol, Dexamethasone, Lidocaine
 Thiamine Pyrophosphate, TPP
 Tinnintus Retraining Therapy, TRT, retraining
